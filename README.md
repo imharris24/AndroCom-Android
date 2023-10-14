@@ -73,6 +73,7 @@ Yes, a Raspberry Pi is necessary for AndroCom to work. AndroCom relies on the Ra
 
 - [@imharris24](https://www.github.com/imharris24)
 - [@imummer16](https://www.github.com/imumer16)
+- [@wasiyah](https://github.com/Wasia-Ibrar)
 
 
 ![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
