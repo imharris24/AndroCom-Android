@@ -1,3 +1,9 @@
+<div align='center'>
+    <img src='https://raw.githubusercontent.com/imharris24/AndroCom/main/Images/AndroCom%20Logo%20Circle%20Icon.png' width='100'>
+</div>
+
+<br>
+
 <div align="center">
     <img src="https://img.shields.io/github/languages/count/imharris24/AndroCom?label=Languages&style=for-the-badge">
     <img src="https://img.shields.io/github/languages/top/imharris24/AndroCom?style=for-the-badge">
@@ -9,7 +15,6 @@
     <img src="https://img.shields.io/github/stars/imharris24/AndroCom?style=for-the-badge">
     <img src="https://img.shields.io/github/last-commit/imharris24/AndroCom?style=for-the-badge">
 </div>
-
 
 # AndroCom - P2P Communication Without Internet
 
@@ -73,10 +78,9 @@ Yes, a Raspberry Pi is necessary for AndroCom to work. AndroCom relies on the Ra
 
 - [@imharris24](https://www.github.com/imharris24)
 - [@imummer16](https://www.github.com/imumer16)
-- [@wasiyah](https://github.com/Wasia-Ibrar)
+- [@wasiyah](https://github.com/wasiyah)
 
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
 
 
 ## Acknowledgements
@@ -85,10 +89,6 @@ Yes, a Raspberry Pi is necessary for AndroCom to work. AndroCom relies on the Ra
  - [Awesome README](https://github.com/matiassingers/awesome-readme)
  - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
 
-
-## Optimizations
-
-What optimizations did you make in your code? E.g. refactors, performance improvements, accessibility
 
 
 ## Screenshots
