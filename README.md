@@ -60,7 +60,7 @@ AndroCom is an Android application that enables users to exchange end-to-end enc
 
 - Video Call Module
 
-- File Transfer Module
+
 
 ## FAQ
 
