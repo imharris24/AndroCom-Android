@@ -5,7 +5,7 @@ import socket
 
 
 # Specify the broadcast IP address and port
-broadcast_ip = '10.42.0.255'  # Replace with the broadcast address of your local network
+broadcast_ip = '192.168.1.31'  # Replace with the broadcast address of your local network
 broadcast_port = 54321
 
 # Create a socket object for broadcasting
@@ -27,9 +27,9 @@ def get_connected_devices():
                 parts = line.split()
                 ip_address = parts[1]
                 mac_address = parts[3]
-                devices[ip_address] = mac_address
+                devices[mac_address] = ip_address.strip('()')
 
-        return devices
+        return {"devices":devices}
 
     except subprocess.CalledProcessError:
         print("Error executing the arp command.")
