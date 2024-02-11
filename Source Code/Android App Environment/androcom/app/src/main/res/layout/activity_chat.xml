@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:animateLayoutChanges="true"
+    tools:context=".activity_chat">
+
+
+
+    <include layout="@layout/recieved_container" android:id="@+id/textmessage" />
+    <include layout="@layout/send_container" android:id="@+id/send_container" />
+
+    <View
+        android:id="@+id/chattingbackground"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/background_chat_content"
+        app:layout_constraintBottom_toTopOf="@+id/layoutsend"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="@dimen/_16sdp"
+        />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/backicon"
+        android:layout_width="@dimen/_42sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="36dp"
+        android:padding="@dimen/_7sdp"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/video"
+        android:layout_width="@dimen/_26sdp"
+        android:layout_height="@dimen/_26sdp"
+        android:layout_marginTop="@dimen/_35sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_16sdp"
+        android:padding="@dimen/_1sdp"
+        android:src="@drawable/video"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageaudio"
+        android:layout_width="@dimen/_26sdp"
+        android:layout_height="@dimen/_26sdp"
+        android:layout_marginTop="@dimen/_35sdp"
+        android:layout_marginEnd="@dimen/_60sdp"
+        android:layout_marginRight="@dimen/_16sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/audiocall"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+    <TextView
+        android:id="@+id/textname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        android:fontFamily="@font/ubunturegular"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/backicon"
+        app:layout_constraintEnd_toStartOf="@id/imageaudio"
+        app:layout_constraintStart_toEndOf="@id/backicon"
+        app:layout_constraintTop_toTopOf="@id/backicon"
+
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/chatRecyler"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:overScrollMode="never"
+        android:padding="@dimen/_20sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+        app:layout_constraintBottom_toBottomOf="@+id/chattingbackground"
+        app:layout_constraintTop_toBottomOf="@+id/backicon"
+        />
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        app:layout_constraintBottom_toBottomOf="@id/chattingbackground"
+        app:layout_constraintEnd_toEndOf="@id/chattingbackground"
+        app:layout_constraintStart_toStartOf="@id/chattingbackground"
+        app:layout_constraintTop_toTopOf="@id/chattingbackground"
+        android:visibility="invisible"
+
+        />
+    <FrameLayout
+        android:id="@+id/layoutsend"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:background="@drawable/chatinput"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/sendbutton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_5sdp"
+           android:src="@drawable/send"
+
+            />
+        
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/inputmessage"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:background="@color/lightgrey"
+        android:hint="@string/write_your_message"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:paddingStart="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_16sdp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/layoutsend"
+        app:layout_constraintStart_toStartOf="parent"
+
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

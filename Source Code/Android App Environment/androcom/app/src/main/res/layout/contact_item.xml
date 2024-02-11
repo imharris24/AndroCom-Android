@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/username"
+                    android:text="Wasiyah"
+                    android:textSize="@dimen/_16ssp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/ubunturegular"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/IPadd"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="193.234.123.000"
+                    android:textSize="@dimen/_11ssp"
+                    android:fontFamily="@font/ubunturegular"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/calluser"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_60sdp"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:src="@drawable/call_icon"
+            android:layout_alignParentRight="true"
+            />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/textuser"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_17sdp"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:src="@drawable/message"
+
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+
+</LinearLayout>
