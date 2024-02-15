@@ -19,7 +19,9 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintVertical_bias="0.333"
+        android:contentDescription="@string/app_name"
+        />
 
     <TextView
         android:id="@+id/textBelowLogo"
@@ -27,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         android:fontFamily="@font/ubunturegular"
-        android:text="AndroCom"
+        android:text="@string/app_name"
         android:textColor="@color/black"
         android:textSize="46sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -43,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         android:fontFamily="@font/ubunturegular"
-        android:text="Messages, Voice Calls &amp; Video Calls without Internet"
+        android:text="@string/app_info"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16sp"

@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/ubunturegular"
-        android:text="@string/setting"
+        android:text="@string/app_settings_title"
         android:textColor="@color/white"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/searchimage"
@@ -57,23 +57,36 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/rectangle"
            />
+
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_70sdp"
-            android:background="@drawable/navigation_bar"
+            android:layout_height="88dp"
             android:layout_marginTop="@dimen/_40sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            >
+            android:background="@drawable/navigation_bar"
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <TextView
                 android:id="@+id/dispname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:fontFamily="@font/ubunturegular"
-                android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_20ssp" />
+                android:textSize="@dimen/_24ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dispip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_38sdp"
+                android:fontFamily="@font/ubunturegular"
+                android:textColor="@color/darkgrey"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="normal" />
+
         </FrameLayout>
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -94,7 +107,7 @@
             android:id="@+id/account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/account"
+            android:text="@string/account_settings_title"
             android:textSize="@dimen/_16ssp"
             android:paddingRight="@dimen/_155sdp"
             android:textStyle="bold"
@@ -110,8 +123,7 @@
             android:layout_marginStart="@dimen/_70sdp"
             android:layout_marginTop="@dimen/_150sdp"
             android:fontFamily="@font/ubunturegular"
-            android:paddingRight="@dimen/_75sdp"
-            android:text="Edit Account Info"
+            android:text="@string/account_settings_description"
             android:textColor="@color/darkgrey"
             android:textSize="@dimen/_12ssp" />
 
@@ -132,10 +144,9 @@
             android:id="@+id/traffic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/traffic"
+            android:text="@string/traffic_prioritization_settings_title"
             android:textSize="@dimen/_16ssp"
             android:textStyle="bold"
-            android:paddingRight="@dimen/_70sdp"
             android:textColor="@color/black"
             android:fontFamily="@font/ubunturegular"
             android:layout_marginTop="@dimen/_185sdp"
@@ -144,9 +155,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/activate"
+            android:text="@string/traffic_prioritization_settings_description"
             android:textSize="@dimen/_12ssp"
-            android:paddingRight="@dimen/_60sdp"
             android:textColor="@color/darkgrey"
             android:fontFamily="@font/ubunturegular"
             android:layout_marginTop="@dimen/_205sdp"
@@ -169,8 +179,7 @@
             android:id="@+id/texts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/notification"
-            android:paddingRight="@dimen/_125sdp"
+            android:text="@string/notification_settings_title"
             android:textSize="@dimen/_16ssp"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -181,9 +190,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/others"
+            android:text="@string/notification_settings_description"
             android:textSize="@dimen/_12ssp"
-            android:paddingRight="@dimen/_80sdp"
             android:textColor="@color/darkgrey"
             android:fontFamily="@font/ubunturegular"
             android:layout_marginTop="@dimen/_255sdp"
@@ -206,10 +214,9 @@
             android:id="@+id/helptext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/help"
+            android:text="@string/help_settings_title"
             android:textSize="@dimen/_16ssp"
             android:textStyle="bold"
-            android:paddingRight="@dimen/_180sdp"
             android:textColor="@color/black"
             android:fontFamily="@font/ubunturegular"
             android:layout_marginTop="@dimen/_287sdp"
@@ -220,12 +227,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_70sdp"
-            android:layout_marginTop="@dimen/_303sdp"
+            android:layout_marginTop="@dimen/_305sdp"
             android:fontFamily="@font/ubunturegular"
-            android:paddingRight="@dimen/_140sdp"
-            android:text="View User Manual"
+            android:text="@string/help_settings_description"
             android:textColor="@color/darkgrey"
             android:textSize="@dimen/_12ssp" />
+
     </FrameLayout>
 
 
@@ -263,7 +270,7 @@
                 android:layout_marginTop="1dp"
                 android:fontFamily="@font/ubunturegular"
 
-                android:text="@string/chat"
+                android:text="@string/navigation_one"
                 android:textColor="@color/darkgrey"
                 android:textSize="@dimen/_13ssp"
                 android:textStyle="bold" />
@@ -289,7 +296,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/ubunturegular"
-                android:text="@string/Call"
+                android:text="@string/navigation_two"
                 android:textAlignment="center"
                 android:textColor="@color/darkgrey"
                 android:textSize="@dimen/_13ssp"
@@ -311,14 +318,14 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="1dp"
                 android:src="@drawable/settings"
-                android:tint="@color/primary_blue" />
+                app:tint="@color/primary_blue" />
 
             <TextView
                 android:id="@+id/settingText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/ubunturegular"
-                android:text="@string/setting"
+                android:text="@string/navigation_three"
                 android:textColor="@color/primary_blue"
                 android:textSize="@dimen/_13ssp"
                 android:textStyle="bold" />

@@ -1,11 +1,13 @@
 package com.application.androcom
 
+// dependencies for local network programming
 import java.net.InetAddress
 import java.net.NetworkInterface
 import java.net.SocketException
 
 class LocalIpAddressProvider {
 
+    // function that returns local IP address
     fun getLocalIpAddress(): String {
         try {
             val interfaces = NetworkInterface.getNetworkInterfaces()
@@ -22,6 +24,6 @@ class LocalIpAddressProvider {
         } catch (e: SocketException) {
             e.printStackTrace()
         }
-        return "No IP Address found"
+        return "No Network Connected"
     }
 }

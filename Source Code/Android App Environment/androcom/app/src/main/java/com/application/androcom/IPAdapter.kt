@@ -23,5 +23,4 @@ class IPAdapter(private val context : Activity,private val arrayList : ArrayList
 
         return view
     }
-
 }

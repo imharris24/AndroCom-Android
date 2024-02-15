@@ -37,48 +37,36 @@
         android:id="@+id/icon_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|center_horizontal"
+        android:layout_marginTop="48dp"
         android:orientation="horizontal"
-        android:layout_marginEnd="@dimen/_34sdp"
         app:layout_constraintTop_toBottomOf="@id/username"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="104dp">
 
         <ImageView
             android:id="@+id/messaging"
-            android:layout_marginTop="@dimen/_32sdp"
-            android:layout_marginStart="@dimen/_40sdp"
-            android:layout_width="@dimen/_41sdp"
-            android:layout_height="@dimen/_41sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
             android:src="@drawable/chat_icon"
-            app:tint="@color/primary_blue"
-            />
+            app:tint="@color/grey" />
+
         <ImageView
             android:id="@+id/videocall"
-            android:layout_marginTop="@dimen/_32sdp"
-            android:layout_marginLeft="@dimen/_25sdp"
-            android:layout_width="@dimen/_41sdp"
-            android:layout_height="@dimen/_41sdp"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
             android:src="@drawable/video"
-            app:tint="@color/primary_blue"
-            />
+            app:tint="@color/grey" />
+
         <ImageView
             android:id="@+id/voicecall"
-            android:layout_marginTop="@dimen/_32sdp"
-            android:layout_marginLeft="@dimen/_25sdp"
-            android:layout_width="@dimen/_41sdp"
-            android:layout_height="@dimen/_41sdp"
+            android:layout_width="@dimen/_34sdp"
+            android:layout_height="@dimen/_34sdp"
+            android:layout_marginTop="@dimen/_3sdp"
             android:src="@drawable/call_icon"
-            app:tint="@color/primary_blue"/>
-        <ImageView
-            android:id="@+id/more"
-            android:layout_marginTop="@dimen/_32sdp"
-            android:layout_marginLeft="@dimen/_25sdp"
-            android:layout_width="@dimen/_41sdp"
-            android:layout_height="@dimen/_41sdp"
-            android:src="@drawable/more"
-            app:tint="@color/primary_blue"/>
-
-
+            app:tint="@color/grey" />
     </LinearLayout>
 
     <FrameLayout
@@ -101,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/darkgrey"
-            android:text="Display Name"
+            android:text="@string/contact_name_label"
             android:id="@+id/display"
             android:layout_marginLeft="@dimen/_24sdp"
             android:layout_marginTop="@dimen/_35sdp"
@@ -122,7 +110,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/darkgrey"
-            android:text="Encryption"
+            android:text="@string/contact_encryption_title"
             android:id="@+id/encryption"
             android:layout_marginLeft="@dimen/_24sdp"
             android:layout_marginTop="@dimen/_85sdp"
@@ -133,7 +121,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Messages are end-to-end encrypted. Tap to verify."
+            android:text="@string/contact_encryption_description"
             android:id="@+id/encrptiontext"
             android:layout_marginLeft="@dimen/_26sdp"
             android:layout_marginTop="@dimen/_110sdp"
@@ -144,7 +132,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/darkgrey"
-            android:text="Mac Address"
+            android:text="@string/contact_mac_address_title"
             android:id="@+id/macaddress"
             android:layout_marginLeft="@dimen/_24sdp"
             android:layout_marginTop="@dimen/_150sdp"
@@ -182,7 +170,7 @@
                 android:layout_height="@dimen/_25sdp"
                 android:background="@drawable/mute"
                 android:layout_marginLeft="@dimen/_22sdp"
-                android:layout_marginTop="@dimen/_120sdp"
+                android:layout_marginTop="@dimen/_125sdp"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -190,7 +178,7 @@
                 android:fontFamily="@font/ubunturegular"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_15ssp"
-                android:text="Mute Notification"
+                android:text="@string/contact_notification_title"
                 android:layout_marginLeft="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_120sdp"
                 />
@@ -216,7 +204,7 @@
                 android:background="@drawable/block"
                 app:tint="@color/red"
                 android:layout_marginLeft="@dimen/_22sdp"
-                android:layout_marginTop="@dimen/_235sdp"
+                android:layout_marginTop="@dimen/_231sdp"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -224,7 +212,7 @@
                 android:fontFamily="@font/ubunturegular"
                 android:textColor="@color/red"
                 android:textSize="@dimen/_15ssp"
-                android:text="Block"
+                android:text="@string/contact_block_title"
                 android:layout_marginLeft="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_235sdp"
                 />

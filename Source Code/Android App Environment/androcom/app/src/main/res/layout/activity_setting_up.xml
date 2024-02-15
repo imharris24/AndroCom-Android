@@ -11,7 +11,6 @@
     android:scrollbars="none"
     tools:context=".activity_setting_up">
 
-
         <TextView
             android:id="@+id/textLogo"
             android:layout_width="wrap_content"
@@ -41,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/ubunturegular"
-            android:text="Welcome to AndroCom! Please enter your first and last name to get started."
+            android:text="@string/setting_up_message"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="17sp"
@@ -55,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="128dp"
 
-            android:contentDescription="@string/first_name_input_desc"
+            android:contentDescription="@string/setting_up_input_placeholder_1"
             android:inputType="text"
             android:minHeight="48dp"
             android:paddingTop="12dp"
@@ -72,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/ubunturegular"
-            android:text="@string/first"
+            android:text="@string/setting_up_input_label_1"
             android:textColor="@color/primary_blue"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/first_name_input"
@@ -86,7 +85,7 @@
             android:layout_width="340dp"
             android:layout_height="50dp"
             android:layout_marginTop="96dp"
-            android:contentDescription="@string/last_name_input_desc"
+            android:contentDescription="@string/setting_up_input_placeholder_2"
             android:inputType="text"
             android:minHeight="48dp"
             android:paddingTop="12dp"
@@ -104,7 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="124dp"
             android:fontFamily="@font/ubunturegular"
-            android:text="@string/last"
+            android:text="@string/setting_up_input_label_2"
             android:textColor="@color/primary_blue"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -119,7 +118,7 @@
             android:layout_marginBottom="32dp"
             android:background="@drawable/continuebutton"
             android:fontFamily="@font/ubunturegular"
-            android:text="@string/cont"
+            android:text="@string/setting_up_button"
             android:textColor="@color/darkgrey"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -127,7 +126,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

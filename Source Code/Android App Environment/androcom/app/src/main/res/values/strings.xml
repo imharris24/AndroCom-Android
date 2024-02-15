@@ -1,9 +1,80 @@
 <resources>
+    <!-- global strings -->
     <string name="app_name">AndroCom</string>
+    <string name="app_version">Version 1.0.1</string>
+    <string name="app_copyright">©2023-2024 AndroCom Inc.</string>
+    <string name="app_info">Messages, Voice Calls &amp; Video Calls without Internets</string>
+    <string name="navigation_one">Chats</string>
+    <string name="navigation_two">Calls</string>
+    <string name="navigation_three">Settings</string>
+
+    <!-- main screen strings -->
+    <string name="get_started_button">Get Started</string>
+
+    <!-- setting up screen strings -->
+    <string name="setting_up_message">Welcome to AndroCom! Please enter your first and last name to get started.</string>
+    <string name="setting_up_input_label_1">First Name</string>
+    <string name="setting_up_input_placeholder_1">Enter your First Name</string>
+    <string name="setting_up_input_label_2">Last Name</string>
+    <string name="setting_up_input_placeholder_2">Enter your Last Name</string>
+    <string name="setting_up_button">Continue</string>
+
+    <!-- home screen -->
+    <string name="home_screen_title">Chats</string>
+
+    <!-- app settings screen -->
+    <string name="app_settings_title">Settings</string>
+    <string name="account_settings_title">Account</string>
+    <string name="account_settings_description">Edit Account Information</string>
+    <string name="traffic_prioritization_settings_title">Traffic Prioritization</string>
+    <string name="traffic_prioritization_settings_description">Enable or Disable Traffic Prioritization</string>
+    <string name="notification_settings_title">Notifications</string>
+    <string name="notification_settings_description">Enable or Disable Notifications</string>
+    <string name="help_settings_title">About</string>
+    <string name="help_settings_description">App Version &amp; Licensing</string>
+
+    <!-- calls history screen -->
+    <string name="calls_screen_title">Calls</string>
+
+    <!-- chating screen -->
+    <string name="chat_input_placeholder">Message</string>
+
+    <!-- active users screen -->
+    <string name="active_screen_title">Active Devices</string>
+
+    <!-- chat account screen -->
+    <string name="contact_name_label">Device Name</string>
+    <string name="contact_encryption_title">Encryption</string>
+    <string name="contact_encryption_description">Messages are end-to-end encrypted via Advanced Encryption Standard.</string>
+    <string name="contact_mac_address_title">MAC Address</string>
+    <string name="contact_notification_title">Mute Notifications</string>
+    <string name="contact_block_title">Block MAC Address</string>
+
+    <!-- help screen -->
+    <string name="license_button_title">License</string>
+    <string name="license">AndroCom Application License Agreement\n\n
+    This AndroCom Application License Agreement (&quot;Agreement&quot;) is entered into by and between Malik Umer, Ahmed, Muhammad, Harris, and Wasia (hereinafter collectively referred to as &quot;Developers&quot;) and you (hereinafter referred to as &quot;User&quot; or &quot;You&quot;) for the use of the AndroCom mobile application (hereinafter referred to as &quot;Application&quot;).\n\n\n
+    1. License Grant\n
+    Subject to the terms and conditions of this Agreement, the Developers hereby grant you a worldwide, royalty-free, non-exclusive, perpetual (for the duration of applicable international laws) license to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Application.\n\n\n
+    2. Limitations\n
+    You agree that the Application is provided &quot;as is&quot;, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event shall the Developers or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the Application or the use or other dealings in the Application.\n\n\n
+    3. Attribution\n
+    You agree to retain all copyright notices and license information pertaining to the Application and any modifications made to it.\n\n\n
+    4. Governing Law\n
+    This Agreement shall be governed by and construed in accordance with the international laws, without regard to its conflict of law provisions.\n\n\n
+    5. Termination\n
+    The license granted herein shall automatically terminate if you violate any of the terms and conditions of this Agreement. Upon termination, you must immediately cease all use of the Application and destroy any copies of the Application in your possession.\n\n\n
+    6. Severability\n
+    If any provision of this Agreement is held to be unenforceable or invalid, the remaining provisions shall remain in full force and effect.\n\n\n
+    7. Entire Agreement\n
+    This Agreement constitutes the entire agreement between you and the Developers regarding the subject matter hereof and supersedes all prior or contemporaneous agreements, representations, warranties, and understandings.\n\n\n
+    By installing, accessing, or using the AndroCom Application, you acknowledge that you have read, understood, and agree to be bound by the terms and conditions of this Agreement.\n\n\n
+    Effective Date: February 13, 2024</string>
+
+
     <string name="communication">P2P Communication Without Internet</string>
     <string name="getstarted">Get Started</string>
-    <string name="welcome">Welcome to AndroCom!
-</string>
+    <string name="welcome">Welcome to AndroCom!</string>
     <string name="entername"><![CDATA[Enter your First Name & Last Name]]></string>
     <string name="first">First Name</string>
     <string name="last">Last Name</string>
@@ -67,5 +138,6 @@
     </string>
     <string name="write_your_message">Write your message</string>
     <string name="title_activity_user_profile">activity_UserProfile</string>
+    <string name="title_activity_help">help_activity</string>
 
 </resources>

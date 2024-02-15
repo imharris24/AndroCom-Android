@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/ubunturegular"
-        android:text="Messages, Voice Calls &amp; Video Calls without Internet"
+        android:text="@string/app_info"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -67,7 +67,7 @@
         android:paddingTop="10dp"
         android:paddingEnd="20dp"
         android:paddingBottom="10dp"
-        android:text="@string/getstarted"
+        android:text="@string/get_started_button"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -75,6 +75,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

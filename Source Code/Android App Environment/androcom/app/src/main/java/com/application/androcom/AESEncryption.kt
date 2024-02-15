@@ -1,8 +1,8 @@
 package com.application.androcom
 
-// dependencies
 import android.os.Build
 import androidx.annotation.RequiresApi
+// encryption dependencies
 import javax.crypto.Cipher
 import javax.crypto.spec.SecretKeySpec
 import java.util.Base64
@@ -17,7 +17,7 @@ class AESEncryption {
         // generate key from a secret key
         val key = generateKey(secretKey)
 
-        // get Aes method
+        // get AES method
         val cipher = Cipher.getInstance("AES/ECB/PKCS5Padding")
 
         // set mode
@@ -65,10 +65,8 @@ class AESEncryption {
         for (i in secretKeyBytes.indices) {
             keyData[i % 16] = (keyData[i % 16] + secretKeyBytes[i]).toByte()
         }
-        // this might generate different each time
 
         // SecretkeySpec is just a defined datatype for keys
-        // this is generated same each time
         return SecretKeySpec(keyData, "AES")
     }
 }

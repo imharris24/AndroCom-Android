@@ -2,14 +2,13 @@ package com.application.androcom
 
 import android.content.ContentValues
 import android.content.Context
+import java.util.*
+import android.util.Log
+// dependencies for SQLite database
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.util.Log
-import java.text.SimpleDateFormat
-import java.util.*
 
 class ChatDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
-
     companion object {
         private const val DATABASE_VERSION = 1
         private const val DATABASE_NAME = "ChatDatabase.db"
@@ -74,8 +73,6 @@ class ChatDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
         return userIPArray
     }
 
-
-
     fun getAllChatsForIp(ip: String?): ArrayList<ChatMessage> {
         val chatMessages = ArrayList<ChatMessage>()
         val db = this.readableDatabase
@@ -118,7 +115,6 @@ class ChatDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
         db.close()
         return chatMessages
     }
-
 }
 
 data class ChatMessage(val sender: String, val receiver: String, val message: String, val timestamp: String, val isSent: Boolean)

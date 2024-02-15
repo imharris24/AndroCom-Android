@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/ubunturegular"
-        android:text="@string/active"
+        android:text="@string/active_screen_title"
         android:textColor="@color/white"
         android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toBottomOf="@+id/searchimage"
@@ -89,7 +89,7 @@
                 android:layout_marginTop="1dp"
                 android:fontFamily="@font/ubunturegular"
 
-                android:text="@string/chat"
+                android:text="@string/navigation_one"
                 android:textColor="@color/darkgrey"
                 android:textSize="@dimen/_13ssp"
                 android:textStyle="bold" />
@@ -115,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/ubunturegular"
-                android:text="@string/Call"
+                android:text="@string/navigation_two"
                 android:textAlignment="center"
                 android:textColor="@color/darkgrey"
                 android:textSize="@dimen/_13ssp"
@@ -143,7 +143,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/ubunturegular"
-                android:text="@string/setting"
+                android:text="@string/navigation_three"
                 android:textColor="@color/darkgrey"
                 android:textSize="@dimen/_13ssp"
                 android:textStyle="bold" />

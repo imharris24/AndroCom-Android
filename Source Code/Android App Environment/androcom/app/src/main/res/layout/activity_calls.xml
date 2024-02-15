@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/ubunturegular"
-        android:text="@string/Call"
+        android:text="@string/calls_screen_title"
         android:textColor="@color/white"
         android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toBottomOf="@+id/searchimage"
@@ -80,7 +80,7 @@
                 android:id="@+id/chatText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/chat"
+                android:text="@string/navigation_one"
                 android:textSize="@dimen/_13ssp"
                 android:layout_marginTop="5dp"
 
@@ -105,7 +105,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Call"
+                android:text="@string/navigation_two"
                 android:textSize="@dimen/_13ssp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/ubunturegular"
@@ -130,7 +130,7 @@
                 android:id="@+id/settingText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/setting"
+                android:text="@string/navigation_three"
                 android:textSize="@dimen/_14ssp"
                 android:fontFamily="@font/ubunturegular"
                 android:textColor="@color/darkgrey" />
