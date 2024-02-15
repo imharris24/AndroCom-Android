@@ -12,15 +12,15 @@ SSID="Ad-HocNetwork"
 PASSWORD="12345678"
 
 #Delete existing connection (if any)
-sudo nmcli connection delete "$hotspot_ssid" 2>/dev/null
+sudo nmcli connection delete $SSID
 
 # Create a new connection with a /27 subnet
 nmcli con add type wifi ifname '*' con-name $SSID autoconnect yes ssid $SSID 802-11-wireless.mode ap 802-11-wireless.band bg ipv4.method shared
-nmcli con modify $SSID 802-11-wireless.security.key-mgmt wpa-psk
-nmcli con modify $SSID 802-11-wireless-security.psk $PASSWORD
+#nmcli con modify $SSID 802-11-wireless.security.key-mgmt wpa-psk
+#nmcli con modify $SSID 802-11-wireless-security.psk $PASSWORD
 
 # Set the network address and subnet mask for a /27 subnet
-nmcli con modify $SSID ipv4.addresses "192.168.1.1/27"
+nmcli con modify $SSID ipv4.addresses "192.168.1.1/27" # ipv4.gateway "192.168.1.1"
 
 # Bring up the WiFi connection
 nmcli con up $SSID
