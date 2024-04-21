@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-04-19T09:41:23.793Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="036kC8SpgTvKSuVy3ck8" version="24.2.5" type="device">
+<mxfile host="app.diagrams.net" modified="2024-04-21T09:05:41.815Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="umtbBywGheIh_swDJH3f" version="24.2.5" type="device">
   <diagram name="Page-1" id="JH8mKb6uM0Cwd8Qrf0DN">
     <mxGraphModel dx="977" dy="1663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -44,9 +44,6 @@
         </mxCell>
         <mxCell id="50gcBJBjnqEBOGdZFFud-12" value="Video Call" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="320" y="510" width="120" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="50gcBJBjnqEBOGdZFFud-13" value="View Last Seen" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="530" y="110" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="50gcBJBjnqEBOGdZFFud-14" value="Mute Mic" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="530" y="430" width="120" height="50" as="geometry" />
@@ -98,12 +95,6 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="50" y="300" as="targetPoint" />
             <mxPoint x="330" y="465" as="sourcePoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="50gcBJBjnqEBOGdZFFud-25" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="50gcBJBjnqEBOGdZFFud-13" target="50gcBJBjnqEBOGdZFFud-7" edge="1">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="560" y="200" as="sourcePoint" />
-            <mxPoint x="400" y="200" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="50gcBJBjnqEBOGdZFFud-1" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
