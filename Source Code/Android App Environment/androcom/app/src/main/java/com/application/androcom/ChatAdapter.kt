@@ -17,6 +17,13 @@ class ChatAdapter:RecyclerView.Adapter<ChatAdapter.MessageViewHolder>() {
         messages.add(message)
         notifyItemInserted(messages.size - 1)
     }
+    // Method to clear all messages from the list
+    fun clearMessages() {
+        messages.clear()
+        notifyDataSetChanged()
+    }
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
 

@@ -203,17 +203,20 @@
                 android:layout_height="@dimen/_25sdp"
                 android:background="@drawable/block"
                 app:tint="@color/red"
+                android:id="@+id/blockIcon"
                 android:layout_marginLeft="@dimen/_22sdp"
                 android:layout_marginTop="@dimen/_231sdp"
                 />
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/blockIconText"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/ubunturegular"
-                android:textColor="@color/red"
+                android:textColor="@color/black"
                 android:textSize="@dimen/_15ssp"
                 android:text="@string/contact_block_title"
                 android:layout_marginLeft="@dimen/_15sdp"
+
                 android:layout_marginTop="@dimen/_235sdp"
                 />
             <TextView

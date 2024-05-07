@@ -25,12 +25,11 @@ class activity_app_settings : AppCompatActivity() {
         val dispip = findViewById<TextView>(R.id.dispip)
         val chatIcon = findViewById<ImageView>(R.id.chatIcon)
         val chatText = findViewById<TextView>(R.id.chatText)
-        val callIcon = findViewById<ImageView>(R.id.callsIcon)
-        val callText = findViewById<TextView>(R.id.callText)
         val keysIcon = findViewById<ImageView>(R.id.keys)
         val accountText = findViewById<TextView>(R.id.account)
         val messageIcon = findViewById<ImageView>(R.id.messageicon)
-        val trafficText = findViewById<TextView>(R.id.traffic)
+        val blockuser = findViewById<TextView>(R.id.blockedUsers)
+        val blockedipdescription=findViewById<TextView>(R.id.blocked_description)
         val notificationIcon = findViewById<ImageView>(R.id.notification)
         val notificationText = findViewById<TextView>(R.id.texts)
         val helpIcon = findViewById<ImageView>(R.id.help)
@@ -63,40 +62,36 @@ class activity_app_settings : AppCompatActivity() {
             finish()
         }
 
-        // event listener for call
-        callIcon.setOnClickListener {
-            val intent = Intent(this, calls_activity::class.java)
-            startActivity(intent)
-            finish()
-        }
-        callText.setOnClickListener {
-            val intent = Intent(this, calls_activity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
         // event listener for account settings
         keysIcon.setOnClickListener {
-            navigateToMainActivity()
+            //navigateToMainActivity()
         }
         accountText.setOnClickListener {
-            navigateToMainActivity()
+            //navigateToMainActivity()
         }
 
         // event listener for traffic prioritization
         messageIcon.setOnClickListener {
-            navigateToMainActivity()
+            val intent = Intent(this, BlockedIPS::class.java)
+            startActivity(intent)
+            finish()
         }
-        trafficText.setOnClickListener {
-            navigateToMainActivity()
+        blockuser.setOnClickListener {
+            val intent = Intent(this, BlockedIPS::class.java)
+            startActivity(intent)
+            finish()
         }
-
+        blockedipdescription.setOnClickListener {
+            val intent = Intent(this, BlockedIPS::class.java)
+            startActivity(intent)
+            finish()
+        }
         // event listener for notifications
         notificationIcon.setOnClickListener {
-            navigateToMainActivity()
+            //navigateToMainActivity()
         }
         notificationText.setOnClickListener {
-            navigateToMainActivity()
+            //navigateToMainActivity()
         }
 
         // event listener for help
@@ -110,12 +105,5 @@ class activity_app_settings : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-    }
-
-    // function to navigate to main activity
-    private fun navigateToMainActivity() {
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
-        finish()
     }
 }

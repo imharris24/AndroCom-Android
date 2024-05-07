@@ -3,6 +3,7 @@ package com.application.androcom
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -32,24 +33,10 @@ class activity_Contacts : AppCompatActivity() {
         binding = ActivityContactsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        findViewById<ImageView>(R.id.callsIcon)
         findViewById<ImageView>(R.id.settingsIcon)
-        findViewById<TextView>(R.id.callText)
         findViewById<TextView>(R.id.settingText)
         findViewById<TextView>(R.id.chatText)
         findViewById<ImageView>(R.id.chatIcon)
-
-        // event listener for call icon
-        binding.callsIcon.setOnClickListener {
-            val intent = Intent(this, calls_activity::class.java)
-            startActivity(intent)
-            finish()
-        }
-        binding.callText.setOnClickListener {
-            val intent = Intent(this, calls_activity::class.java)
-            startActivity(intent)
-            finish()
-        }
 
         // event listener for settings icon
         binding.settingText.setOnClickListener {
@@ -86,7 +73,9 @@ class activity_Contacts : AppCompatActivity() {
             val selectedUserIP = userIPArray[position]
             val username = selectedUserIP.name
             val ip = selectedUserIP.IP
-            startChatActivity(username, ip)
+            val mac = selectedUserIP.mac
+            Log.i("Test", "${username}, ${ip}, ${mac}")
+            startChatActivity(username, ip, mac)
         }
 
         // get information from server
@@ -115,17 +104,27 @@ class activity_Contacts : AppCompatActivity() {
 
                         try {
 
-                            val devices = JSONObject(receivedData)
-                            val newUserIPs = ArrayList<UserIP>()
-                            val devicesJSONObject = devices.getJSONObject("devices")
-                            val deviceKeys = devicesJSONObject.keys()
+                            val activeUsersJson = JSONObject(receivedData)
+                            val activeUsersArray = activeUsersJson.getJSONArray("active_users")
 
-                            for (ipKey in deviceKeys) {
-                                val ip = devicesJSONObject.getString(ipKey)
-                                if(ipAddress == ip){
-                                    continue
+                            val newUserIPs = ArrayList<UserIP>()
+
+                            for (i in 0 until activeUsersArray.length()) {
+                                val user = activeUsersArray.getJSONObject(i)
+                                val name = user.getString("Name")
+                                val ip = user.getString("IP Address")
+                                val macAddress = user.getString("Mac Address")
+
+                                // Assuming UserIP is a data class with name and IP properties
+                                if (ipAddress != ip) { // Checking if it's not the local IP
+                                    // blocked user check
+                                    if (!ChatDatabaseHelper(this@activity_Contacts).isIPBlocked(ip)) {
+                                        newUserIPs.add(UserIP(name = name, IP = ip, mac = macAddress))
+                                    }
                                 }
-                                newUserIPs.add(UserIP("$ipKey","$ip"))
+                                else {
+                                    // harris store my mac somewhere
+                                }
                             }
 
                             // push active users to UI
@@ -165,10 +164,11 @@ class activity_Contacts : AppCompatActivity() {
     }
 
     // function to navigate to chat activity
-    private fun startChatActivity(username: String, ip: String) {
+    private fun startChatActivity(username: String, ip: String, mac: String) {
         val intent = Intent(this, activity_chat::class.java)
         intent.putExtra("username", username)
         intent.putExtra("ip", ip)
+        intent.putExtra("mac", mac)
         startActivity(intent)
         finish()
     }

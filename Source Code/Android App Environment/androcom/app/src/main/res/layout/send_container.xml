@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textmessage"
         android:background="@drawable/background_send"
-        android:padding="@dimen/_12sdp"
+        android:padding="@dimen/_10sdp"
         android:textColor="@color/white"
         android:textSize="@dimen/_13ssp"
         android:fontFamily="@font/ubunturegular"

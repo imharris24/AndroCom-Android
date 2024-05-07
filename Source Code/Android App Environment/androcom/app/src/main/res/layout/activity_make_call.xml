@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/Offwhite"
+    tools:context=".MakeCallActivity" >
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Umer Ahmed"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="@font/ubunturegular"
+        android:textSize="@dimen/_30ssp"
+        tools:ignore="HardcodedText" />
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_420sdp"
+        android:gravity="center_horizontal" >
+
+          <ImageButton
+              android:id="@+id/buttonMute"
+              android:layout_width="@dimen/_55sdp"
+              android:layout_height="@dimen/_55sdp"
+              android:layout_marginHorizontal="@dimen/_55sdp"
+              android:background="@drawable/mikemute"
+              android:src="@drawable/mike"
+              tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+          <ImageButton
+              android:id="@+id/buttonReject"
+              android:layout_width="@dimen/_55sdp"
+              android:layout_height="@dimen/_55sdp"
+              android:layout_marginHorizontal="@dimen/_55sdp"
+              android:background="@drawable/reject_button"
+              android:src="@drawable/endcall"
+             
+              tools:ignore="ContentDescription,ImageContrastCheck,SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+
+    <!--  <TextView
+          android:id="@+id/textViewCalling"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:text="@string/calling"
+          android:textAppearance="?android:attr/textAppearanceLarge" />
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:gravity="center_horizontal" >
+
+          <Button
+              android:id="@+id/buttonEndCall"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/endCall" />
+
+      </LinearLayout>
+  -->
+</LinearLayout>

@@ -73,10 +73,10 @@ dependencies {
 
     implementation ("com.google.code.gson:gson:2.9.0")
 
+    implementation("com.google.android.material:material:1.11.0")
 
     implementation("com.intuit.sdp:sdp-android:1.1.0")
     implementation("com.intuit.ssp:ssp-android:1.0.6")
-
     implementation("com.makeramen:roundedimageview:2.3.0")
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")

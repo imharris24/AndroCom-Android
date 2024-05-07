@@ -85,11 +85,15 @@ class activity_setting_up : AppCompatActivity() {
                 saveUserDataToPrefs(user)
                 val userJson = gson.toJson(user)
 
-                // route to home screen
-                val intent = Intent(this@activity_setting_up, activity_HomeScreen::class.java)
-                intent.putExtra("userJson", userJson)
+
+                val intent = Intent(this@activity_setting_up,SplashScreenActivity::class.java)
                 startActivity(intent)
                 finish()
+                // route to home screen
+//                val intent = Intent(this@activity_setting_up, activity_HomeScreen::class.java)
+//                intent.putExtra("userJson", userJson)
+//                startActivity(intent)
+//                finish()
 
             }
             // do nothing if button is disabled

@@ -3,12 +3,19 @@ package com.application.androcom
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 import com.application.androcom.databinding.ActivityHomeScreenBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class activity_HomeScreen : AppCompatActivity() {
+    private lateinit var recentChatsJob: Job
     private lateinit var binding : ActivityHomeScreenBinding
     private lateinit var userIPArray: ArrayList<UserIP>
     private lateinit var listView: ListView
@@ -21,9 +28,8 @@ class activity_HomeScreen : AppCompatActivity() {
         // set layout to activity_home_screen
         setContentView(binding.root)
 
-        val callsIcon = findViewById<ImageView>(R.id.callsIcon)
+
         val settingsIcon = findViewById<ImageView>(R.id.settingsIcon)
-        val callText = findViewById<TextView>(R.id.callText)
         val settingText = findViewById<TextView>(R.id.settingText)
         val wifi = findViewById<ImageView>(R.id.userlist)
 
@@ -33,18 +39,6 @@ class activity_HomeScreen : AppCompatActivity() {
                  startActivity(this)
                  finish()
             }
-        }
-
-        // event listener for calls icon
-        callsIcon.setOnClickListener {
-            val intent = Intent(this, calls_activity::class.java)
-            startActivity(intent)
-            finish()
-        }
-        callText.setOnClickListener {
-            val intent = Intent(this, calls_activity::class.java)
-            startActivity(intent)
-            finish()
         }
 
         // event listener for settings icon
@@ -59,32 +53,52 @@ class activity_HomeScreen : AppCompatActivity() {
             finish()
         }
 
-        // create DB instance
-        val dbHelper = ChatDatabaseHelper(this)
 
-        // get IP addresses of all users within the database
-        userIPArray = dbHelper.getAllUserIPs("${LocalIpAddressProvider().getLocalIpAddress()}")
-
-        listView = findViewById(R.id.recentchat)
-        adapter = RecentChatAdapter(this,userIPArray)
-        listView.adapter = adapter
-
-        // event listener for chat item
-        listView.setOnItemClickListener {_,_, position, _ ->
-            val selectedUserIP = userIPArray[position]
-            val username = selectedUserIP.name
-            val ip = selectedUserIP.IP
-
-            startChatActivity(username, ip)
+        recentChatsJob = CoroutineScope(Dispatchers.Main).launch {
+            Log.i("recentChatsJob","Start Coroutine")
+            while (true) {
+                updateRecentChats()
+                delay(100) // Delay for 1 seconds
+            }
         }
     }
 
-    // function to start chat activity
-    private fun startChatActivity(username: String, ip: String) {
+    override fun onDestroy() {
+        super.onDestroy()
+        // Cancel the coroutine job when the activity is destroyed
+        recentChatsJob.cancel()
+    }
+
+
+    private fun updateRecentChats() {
+        val dbHelper = ChatDatabaseHelper(this)
+        userIPArray = dbHelper.getAllUserIPs(LocalIpAddressProvider().getLocalIpAddress())
+
+//        ChatDatabaseHelper(this).addIPToMute("192.168.100.27")
+//        ChatDatabaseHelper(this).removeIPFromMute("192.168.100.27")
+        userIPArray.add(UserIP("Umer","192.168.100.27","MAc"))
+        ChatDatabaseHelper(this).addIPToBlock("192.168.100.28","Harris")
+        listView = findViewById(R.id.recentchat)
+        adapter = RecentChatAdapter(this, userIPArray)
+        listView.adapter = adapter
+
+        listView.setOnItemClickListener { _, _, position, _ ->
+            val selectedUserIP = userIPArray[position]
+            val username = selectedUserIP.name
+            val ip = selectedUserIP.IP
+            val mac = selectedUserIP.mac
+            startChatActivity(username, ip, mac)
+        }
+    }
+
+    private fun startChatActivity(username: String, ip: String, mac: String) {
         val intent = Intent(this, activity_chat::class.java)
         intent.putExtra("username", username)
         intent.putExtra("ip", ip)
+        intent.putExtra("mac", mac)
         startActivity(intent)
         finish()
     }
+
+
 }

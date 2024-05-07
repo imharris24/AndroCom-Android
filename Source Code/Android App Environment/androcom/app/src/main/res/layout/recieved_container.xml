@@ -21,7 +21,7 @@
         android:layout_marginStart="@dimen/_9sdp"
         android:layout_marginEnd="@dimen/_4sdp"
         android:background="@drawable/background_recieved"
-        android:padding="@dimen/_12sdp"
+        android:padding="@dimen/_10sdp"
         android:textColor="@color/black"
         android:textSize="@dimen/_13ssp"
         android:fontFamily="@font/ubunturegular"

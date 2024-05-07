@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:background="@color/white"
+    >
+    <TextView
+        android:id="@+id/blockedUser"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_1sdp"
+        android:layout_weight="1"
+        android:fontFamily="@font/ubunturegular"
+        android:padding="@dimen/_7sdp"
+        android:text="Username"
+        android:textColor="@color/black"
+        android:textSize="19sp"
+        android:layout_marginRight="@dimen/_7sdp"/>
+
+    <TextView
+        android:id="@+id/ip_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_1sdp"
+        android:layout_marginRight="@dimen/_7sdp"
+        android:layout_weight="1"
+        android:fontFamily="@font/ubunturegular"
+        android:padding="@dimen/_7sdp"
+        android:text="225.225.225.225"
+        android:textColor="@color/black"
+        android:textSize="19sp" />
+
+    <ImageButton
+        android:id="@+id/unblock_button"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:textColor="@color/white"
+        android:background="@drawable/unblock" />
+
+</LinearLayout>

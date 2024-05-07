@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Offwhite"
+    android:orientation="vertical"
+    tools:context=".ReceiveCallActivity">
+
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:fontFamily="@font/ubunturegular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_30ssp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewIncomingCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:text="@string/incomingCall"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_30ssp" />
+
+    <ImageButton
+        android:id="@+id/button_recieve"
+        android:layout_width="@dimen/_55sdp"
+        android:layout_margin="10dp"
+        android:layout_height="@dimen/_55sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_375sdp"
+        android:src="@drawable/audiocall"
+        app:tint="@color/Offwhite"
+        android:background="@drawable/button_style"
+        android:backgroundTint="@color/primary_blue"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/buttonReject"
+        android:layout_width="@dimen/_55sdp"
+        android:layout_height="@dimen/_55sdp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/reject_button"
+        android:contentDescription="TODO"
+        android:src="@drawable/rejectcall" />
+
+    <!--  <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:gravity="center_horizontal" >
+
+          <Button
+              android:id="@+id/buttonAccept"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/accept" />
+
+          <Button
+              android:id="@+id/buttonReject"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/reject" />
+
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center_horizontal" >
+
+          <Button
+              android:id="@+id/buttonEndCall1"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/endCall" />
+
+      </LinearLayout>-->
+
+</LinearLayout>
