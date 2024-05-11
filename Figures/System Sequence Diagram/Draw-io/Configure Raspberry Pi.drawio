@@ -1,0 +1,131 @@
+<mxfile host="app.diagrams.net" modified="2024-05-08T07:19:50.657Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="Ahzx7_VgDDdvD_ZlsnTe" version="24.3.1" type="device">
+  <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
+    <mxGraphModel dx="625" dy="327" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pxzlPe1048tR8DVXgdaq-4" value="" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};participant=umlActor;" vertex="1" parent="1">
+          <mxGeometry x="30" y="40" width="20" height="650" as="geometry" />
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-9" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="pxzlPe1048tR8DVXgdaq-4">
+          <mxGeometry x="5" y="60" width="10" height="570" as="geometry" />
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-5" value=":Raspberry Pi" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="180" y="40" width="100" height="650" as="geometry" />
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-11" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="pxzlPe1048tR8DVXgdaq-5">
+          <mxGeometry x="45" y="60" width="10" height="570" as="geometry" />
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-22" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="pxzlPe1048tR8DVXgdaq-5">
+          <mxGeometry x="50" y="375" width="10" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-23" value="Delay 3s" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" target="pxzlPe1048tR8DVXgdaq-22" parent="pxzlPe1048tR8DVXgdaq-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="55" y="355" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="85" y="385" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-6" value=":OS Network&amp;nbsp; Manager" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="410" y="40" width="100" height="650" as="geometry" />
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-15" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="pxzlPe1048tR8DVXgdaq-6">
+          <mxGeometry x="45" y="170" width="10" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-17" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="pxzlPe1048tR8DVXgdaq-6">
+          <mxGeometry x="50" y="240" width="10" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-18" value="Create ad hoc&amp;nbsp;&lt;div&gt;network&lt;/div&gt;" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" target="pxzlPe1048tR8DVXgdaq-17" parent="pxzlPe1048tR8DVXgdaq-6">
+          <mxGeometry x="0.0026" relative="1" as="geometry">
+            <mxPoint x="55" y="220" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="85" y="250" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-7" value=":Python Interpreter" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="640" y="40" width="100" height="650" as="geometry" />
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-25" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="pxzlPe1048tR8DVXgdaq-7">
+          <mxGeometry x="45" y="430" width="10" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-26" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="pxzlPe1048tR8DVXgdaq-7">
+          <mxGeometry x="51" y="505" width="10" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-27" value="Initialize Python&lt;div&gt;server&lt;/div&gt;" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" target="pxzlPe1048tR8DVXgdaq-26" parent="pxzlPe1048tR8DVXgdaq-7">
+          <mxGeometry x="0.0015" relative="1" as="geometry">
+            <mxPoint x="56" y="485" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="86" y="515" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-8" value="Turn on Raspberry Pi" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="pxzlPe1048tR8DVXgdaq-11">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="45" y="120" as="sourcePoint" />
+            <mxPoint x="220" y="119" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-13" value="Linux OS booted" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.0024" relative="1" as="geometry">
+            <mxPoint x="225" y="160.00000000000006" as="sourcePoint" />
+            <mxPoint x="45" y="160.00000000000006" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-14" value="Execute AndroCom bash script" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="45" y="202" as="sourcePoint" />
+            <mxPoint x="225" y="202" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-16" value="Execute bash script" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.0019" width="80" relative="1" as="geometry">
+            <mxPoint x="235" y="230" as="sourcePoint" />
+            <mxPoint x="455" y="230" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-19" value="Bash script executed" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" target="pxzlPe1048tR8DVXgdaq-11">
+          <mxGeometry x="0.0024" relative="1" as="geometry">
+            <mxPoint x="455" y="350" as="sourcePoint" />
+            <mxPoint x="240" y="350" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-24" value="Execute Python script" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="0.0024" width="80" relative="1" as="geometry">
+            <mxPoint x="235" y="490" as="sourcePoint" />
+            <mxPoint x="685" y="490" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-28" value="Bash script executed" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" source="pxzlPe1048tR8DVXgdaq-25" target="pxzlPe1048tR8DVXgdaq-11">
+          <mxGeometry x="0.0024" relative="1" as="geometry">
+            <mxPoint x="560" y="450" as="sourcePoint" />
+            <mxPoint x="245" y="360" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="420" y="610" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pxzlPe1048tR8DVXgdaq-29" value="Script has been executed" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" source="pxzlPe1048tR8DVXgdaq-11" target="pxzlPe1048tR8DVXgdaq-9">
+          <mxGeometry x="0.0024" relative="1" as="geometry">
+            <mxPoint x="695" y="620" as="sourcePoint" />
+            <mxPoint x="245" y="620" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="220" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
