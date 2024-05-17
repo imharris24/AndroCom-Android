@@ -40,7 +40,7 @@ list_connected_devices() {
 trap 'list_connected_devices; exit' SIGINT
 
 # Continuously list connected devices
-while true; do
-    list_connected_devices
-    sleep 10  # Adjust the sleep interval as needed
-done
+#while true; do
+ #   list_connected_devices
+ #   sleep 10  # Adjust the sleep interval as needed
+#done
