@@ -3,11 +3,22 @@ import json
 import threading
 import subprocess
 import time
+import os
 
 # Global list to store data from apps
 
 Active_User_list = []
 Active_User_lock = threading.Lock()
+
+def clear_screen():
+    # Check if the system is Windows
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        # Assume it's a Unix-based system (Linux, MacOS)
+        os.system('clear')
+
+
 
 def handle_client_connection(client_socket):
     request = client_socket.recv(1024).decode('utf-8')
@@ -35,10 +46,14 @@ def start_server(host, port):
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((host, port))
     server_socket.listen(5)
+    # Clear the screen
+    clear_screen()
     print(f"Server listening on {host} : {port}")
 
     while True:
         client_socket, _ = server_socket.accept()
+        # Clear the screen
+        clear_screen()
         print("Accepted connection from:", client_socket.getpeername())
         handle_client_connection(client_socket)
 
@@ -54,6 +69,8 @@ def parse_received_message(data):
             "Mac Address": mac_address
         }
     except Exception as e:
+        # Clear the screen
+        clear_screen()
         print("Error in parsing message")
         return None
 
@@ -83,6 +100,8 @@ def get_connected_devices():
                 connected_devices[mac_address] = ip_address
         return connected_devices
     except subprocess.CalledProcessError as e:
+        # Clear the screen
+        clear_screen()
         print("Error executing the arp command:", e)
         return {}
 
@@ -106,12 +125,16 @@ def send_udp_broadcast(broadcast_ip, broadcast_port):
                 
                 # Send UDP broadcast
                 broadcast_socket.sendto(udp_message.encode(), (broadcast_ip, broadcast_port))
+                # Clear the screen
+                clear_screen()
                 print(f"Broadcasted: {udp_message}")
                 
         except Exception as e:
+            # Clear the screen
+            clear_screen()
             print("Error occurred while sending UDP broadcast:", e)
         
-        time.sleep(5)  # Wait for a while before attempting again
+        time.sleep(2)  # Wait for a while before attempting again
     
     broadcast_socket.close()
 
