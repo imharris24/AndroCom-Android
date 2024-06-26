@@ -40,14 +40,32 @@ public class ReceiveCallActivity extends Activity {
         Intent intent = getIntent();
         contactName = intent.getStringExtra("EXTRA_CONTACT");
         contactIp = intent.getStringExtra("EXTRA_IP");
-        contactName2 = intent.getStringExtra("myuser");
-        TextView textView = (TextView) findViewById(R.id.textViewIncomingCall);
+        contactName2 = intent.getStringExtra("DisplayName");
+        TextView textView = (TextView) findViewById(R.id.username);
         textView.setText(contactName2);
+        TextView incomming = (TextView) findViewById(R.id.textViewIncomingCall);
 
         final ImageButton endButton = (ImageButton) findViewById(R.id.buttonReject);
 
-        endButton.setVisibility(View.INVISIBLE);
+        ImageButton toggleMic = (ImageButton) findViewById(R.id.button_toggleMic);
 
+        toggleMic.setOnClickListener(new OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                call.toggleMic();
+                if (call.micCheck()) {
+                    toggleMic.setImageResource(R.drawable.mike);
+                } else {
+                    toggleMic.setImageResource(R.drawable.unmute);
+                }
+            }
+        });
+
+
+
+
+        endButton.setVisibility(View.INVISIBLE);
+        toggleMic.setVisibility(View.INVISIBLE);
         startListener();
 
         // ACCEPT BUTTON
@@ -72,7 +90,10 @@ public class ReceiveCallActivity extends Activity {
                     ImageButton reject = (ImageButton) findViewById(R.id.buttonReject);
                     reject.setEnabled(true);
 
+                    incomming.setText(" ");
+
                     endButton.setVisibility(View.VISIBLE);
+                    toggleMic.setVisibility(View.VISIBLE);
                     acceptButton.setVisibility(View.INVISIBLE);
                 }
                 catch(UnknownHostException e) {

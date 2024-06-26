@@ -51,6 +51,20 @@ public class MakeCallActivity extends Activity {
         makeCall();
 
         ImageButton endButton = (ImageButton) findViewById(R.id.buttonReject);
+        ImageButton micButton = (ImageButton) findViewById(R.id.buttonMute);
+
+        micButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                call.toggleMic();
+                if(call.micCheck()){
+                    micButton.setImageResource(R.drawable.mike);
+                }else{
+                    micButton.setImageResource(R.drawable.unmute);
+                }
+            }
+        });
+
         endButton.setOnClickListener(new OnClickListener() {
 
             @Override

@@ -79,7 +79,19 @@ class ChatDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
     fun getAllUserIPs(localIp: String): ArrayList<UserIP> {
         val userIPSet = HashSet<UserIP>() // Use a set to ensure uniqueness
         val db = this.readableDatabase
-        val distinctReceiverQuery = "SELECT $KEY_NAME, $KEY_RECEIVER, $KEY_MAC FROM $TABLE_CHAT WHERE $KEY_RECEIVER != '$localIp'"
+//        val distinctReceiverQuery = "SELECT $KEY_NAME, $KEY_RECEIVER, $KEY_MAC FROM $TABLE_CHAT WHERE $KEY_RECEIVER != '$localIp' GROUP BY $KEY_RECEIVER"
+
+        val distinctReceiverQuery = """
+    SELECT c.$KEY_NAME, c.$KEY_RECEIVER, c.$KEY_MAC
+    FROM $TABLE_CHAT c
+    JOIN (
+        SELECT $KEY_RECEIVER, MAX($KEY_TIMESTAMP) AS max_timestamp
+        FROM $TABLE_CHAT
+        WHERE $KEY_RECEIVER != '$localIp'
+        GROUP BY $KEY_RECEIVER
+    ) max_ts ON c.$KEY_RECEIVER = max_ts.$KEY_RECEIVER AND c.$KEY_TIMESTAMP = max_ts.max_timestamp
+""".trimIndent()
+
         try {
             val receiverCursor = db.rawQuery(distinctReceiverQuery, null)
             receiverCursor.use { cursor ->

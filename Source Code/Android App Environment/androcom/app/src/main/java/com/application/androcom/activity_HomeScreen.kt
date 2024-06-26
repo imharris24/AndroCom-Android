@@ -74,10 +74,9 @@ class activity_HomeScreen : AppCompatActivity() {
         val dbHelper = ChatDatabaseHelper(this)
         userIPArray = dbHelper.getAllUserIPs(LocalIpAddressProvider().getLocalIpAddress())
 
-//        ChatDatabaseHelper(this).addIPToMute("192.168.100.27")
-//        ChatDatabaseHelper(this).removeIPFromMute("192.168.100.27")
-        userIPArray.add(UserIP("Umer","192.168.100.27","MAc"))
-        ChatDatabaseHelper(this).addIPToBlock("192.168.100.28","Harris")
+//        userIPArray.add(UserIP("Umer Ahmed","192.168.100.52","Mac 1"))
+//        userIPArray.add(UserIP("Muhammad Harris","192.168.100.28","Mac 2"))
+
         listView = findViewById(R.id.recentchat)
         adapter = RecentChatAdapter(this, userIPArray)
         listView.adapter = adapter

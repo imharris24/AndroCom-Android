@@ -1,14 +1,16 @@
 package com.application.androcom
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import android.util.Log
 
-class BlockedIpAdapter(private val context: Context, private val blockedIps: List<String>,private val blocked_User:List<String>) :
+class BlockedIpAdapter(private val context: Context, private val blockedIps: MutableList<String>,private val blocked_User:MutableList<String>) :
     RecyclerView.Adapter<BlockedIpAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -30,7 +32,15 @@ class BlockedIpAdapter(private val context: Context, private val blockedIps: Lis
         holder.ipAddressTextView.text = ipAddress
 
         holder.unblockButton.setOnClickListener {
+            ChatDatabaseHelper(context).removeIPFromBlock(ipAddress)
+            Log.d("BlockedIpAdapter","Removed ${ipAddress} From Blocked List")
+            // Remove the item from the data source
+            blockedIps.removeAt(position)
+            blocked_User.removeAt(position)
 
+            // Notify the adapter about the item removal
+            notifyItemRemoved(position)
+            notifyItemRangeChanged(position, itemCount)
         }
     }
 

@@ -10,6 +10,8 @@
     <string name="blokedips">Blocked IPs</string>
     <!-- main screen strings -->
     <string name="get_started_button">Get Started</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="edit_name">Edit Username</string>
 
     <!-- setting up screen strings -->
     <string name="setting_up_message">Welcome to AndroCom! Please enter your first and last name to get started.</string>

@@ -22,7 +22,7 @@ class activity_setting_up : AppCompatActivity() {
     private val gson = Gson()
 
     // user information
-    data class User(val firstName: String, val lastName: String):Serializable
+    data class User(var firstName: String, var lastName: String):Serializable
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

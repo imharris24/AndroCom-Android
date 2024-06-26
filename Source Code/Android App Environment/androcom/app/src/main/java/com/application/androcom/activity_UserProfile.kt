@@ -13,92 +13,65 @@ class activity_UserProfile : AppCompatActivity() {
 
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-        // set layout to activity_user_profile
         setContentView(R.layout.activity_user_profile)
 
         val receivedIP = intent.getStringExtra("ip")
-        val receivedUSER = intent.getStringExtra("username")
         val receivedMac = intent.getStringExtra("mac")
-        val IpAdress=findViewById<TextView>(R.id.userip)
+        val receivedUSER = intent.getStringExtra("username")
+
+        Log.d("activity_UserProfile", "IP: $receivedIP, MAC: $receivedMac, USER: $receivedUSER")
+
+        val IpAdress = findViewById<TextView>(R.id.userip)
         val UserName = findViewById<TextView>(R.id.username)
         val BackIcon = findViewById<ImageView>(R.id.backicon)
-        val ChatIcon = findViewById<ImageView>(R.id.messaging)
-        val BlockIcon =findViewById<ImageView>(R.id.blockIcon)
+        val BlockIcon = findViewById<ImageView>(R.id.blockIcon)
         val BlockIconText = findViewById<TextView>(R.id.blockIconText)
         val blockip = findViewById<TextView>(R.id.blockuser)
         val MacAdress = findViewById<TextView>(R.id.usermac)
-        UserName.text = receivedUSER
-        MacAdress.text = receivedMac
-        blockip.text = receivedIP
-        IpAdress.text=receivedIP
 
-        // Find the Switch in your activity or fragment
-        val switchMuteNotification= findViewById<Switch>(R.id.mutenotification)
+        UserName.text = receivedUSER ?: "No Username"
+        MacAdress.text = receivedMac ?: "No MAC Address"
+        blockip.text = " " ?: "No IP"
+        IpAdress.text = receivedIP ?: "No IP"
 
-        // setting state of switch on load
-        if (ChatDatabaseHelper(this).addIPToMute(receivedIP.toString())) {
-            // if user is already mute turn switch on
-            switchMuteNotification.isChecked = true
-            Log.d("Switch","On")
-        } else {
-            // else switch off
-            switchMuteNotification.isChecked =false
-            Log.d("Switch","Off")
-        }
+        val switchMuteNotification = findViewById<Switch>(R.id.mutenotification)
+// Get the initial state from the database
+        val chatDatabaseHelper = ChatDatabaseHelper(this)
+        val isMuted = chatDatabaseHelper.isIPMuted(receivedIP.toString())
+        switchMuteNotification.isChecked = isMuted
+        Log.d("Switch", if (isMuted) "On" else "Off")
 
-        // Listening of change in state
+// Set a listener for the switch state change
         switchMuteNotification.setOnCheckedChangeListener { _, isChecked ->
-            // Check if the Switch is checked (on), already mute
             if (isChecked) {
-                // remove for db
-                ChatDatabaseHelper(this).removeIPFromMute(receivedIP.toString())
-                // reset state of switch
-                switchMuteNotification.isChecked =false
-            }
-            else {
-                // If the Switch is not checked (off), remove the IP address from mute
-                // add to db
-                ChatDatabaseHelper(this).addIPToMute(receivedIP.toString())
-                // reset state of switch
-                switchMuteNotification.isChecked =false
+                chatDatabaseHelper.addIPToMute(receivedIP.toString())
+                Log.d("Switch", "Muted")
+            } else {
+                chatDatabaseHelper.removeIPFromMute(receivedIP.toString())
+                Log.d("Switch", "Unmuted")
             }
         }
 
-        // event listener for chat icon
-        ChatIcon.setOnClickListener {
-            val intent = Intent(this, activity_chat::class.java)
-            startActivity(intent)
+
+        BackIcon.setOnClickListener {
+
             finish()
         }
 
-        // event listener for back icon
-        BackIcon.setOnClickListener {
-            val intent = Intent(this, activity_chat::class.java)
-            startActivity(intent)
-
-        }
-
         BlockIcon.setOnClickListener {
-            blockIP(receivedIP,receivedUSER)
+            blockIP(receivedIP, receivedUSER)
         }
 
         BlockIconText.setOnClickListener {
-            blockIP(receivedIP,receivedUSER)
+            blockIP(receivedIP, receivedUSER)
         }
     }
 
     private fun blockIP(ipAddress: String?, username: String?) {
         if (ipAddress != null) {
             Log.d("blocked", "IP address blocked: $ipAddress")
-            // user to block user table
             ChatDatabaseHelper(this).addIPToBlock(ipAddress, username.toString())
-//            val intent = Intent(this, BlockedIPS::class.java)
-//            intent.putStringArrayListExtra("blocked_ips", arrayListOf(ipAddress))
-//            intent.putStringArrayListExtra("Blocked_Username", arrayListOf(username))
-//            startActivity(intent)
         }
     }
-
 }

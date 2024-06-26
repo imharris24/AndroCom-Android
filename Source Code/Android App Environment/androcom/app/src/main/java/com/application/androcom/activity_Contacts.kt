@@ -74,10 +74,8 @@ class activity_Contacts : AppCompatActivity() {
             val username = selectedUserIP.name
             val ip = selectedUserIP.IP
             val mac = selectedUserIP.mac
-            Log.i("Test", "${username}, ${ip}, ${mac}")
             startChatActivity(username, ip, mac)
         }
-
         // get information from server
         startIPReceiver()
     }

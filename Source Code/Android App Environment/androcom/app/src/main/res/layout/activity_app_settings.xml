@@ -8,20 +8,7 @@
     android:animateLayoutChanges="true"
     tools:context=".activity_app_settings">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/searchimage"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/rounded_imageview"
-        android:padding="@dimen/_2sdp"
-        android:src="@drawable/ic_search"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/white"
 
-        />
 
     <TextView
         android:id="@+id/settings"
@@ -30,22 +17,23 @@
         android:fontFamily="@font/ubunturegular"
         android:text="@string/app_settings_title"
         android:textColor="@color/white"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/searchimage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:textSize="30sp"
+        android:layout_marginTop="36dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/searchimage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/frameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.629" />
 
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/chat_content"
         app:layout_constraintBottom_toTopOf="@+id/navigationframe"
-        app:layout_constraintTop_toBottomOf="@id/searchimage"
+        app:layout_constraintTop_toBottomOf="@id/settings"
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="-29dp">
 
@@ -56,7 +44,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/rectangle"
-           />
+            />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -118,6 +106,7 @@
             />
 
         <TextView
+            android:id="@+id/editAccountInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_70sdp"
@@ -163,54 +152,20 @@
             android:layout_marginTop="@dimen/_205sdp"
             android:layout_marginStart="@dimen/_70sdp"
             />
+
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/notification"
+            android:id="@+id/help"
             android:layout_width="@dimen/_35sdp"
             android:layout_height="@dimen/_35sdp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="@dimen/_235sdp"
             android:background="@drawable/rounded_iconview"
             android:padding="@dimen/_7sdp"
-            android:src="@drawable/notification"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/primary_blue"
-            />
-        <TextView
-            android:id="@+id/texts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/notification_settings_title"
-            android:textSize="@dimen/_16ssp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:fontFamily="@font/ubunturegular"
-            android:layout_marginTop="@dimen/_237sdp"
-            android:layout_marginStart="@dimen/_70sdp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/notification_settings_description"
-            android:textSize="@dimen/_12ssp"
-            android:textColor="@color/darkgrey"
-            android:fontFamily="@font/ubunturegular"
-            android:layout_marginTop="@dimen/_255sdp"
-            android:layout_marginStart="@dimen/_70sdp"
-            />
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/help"
-            android:layout_width="@dimen/_35sdp"
-            android:layout_height="@dimen/_35sdp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="@dimen/_285sdp"
-            android:background="@drawable/rounded_iconview"
-            android:padding="@dimen/_7sdp"
             android:src="@drawable/help"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/primary_blue"
-            />
+            app:tint="@color/primary_blue" />
+
         <TextView
             android:id="@+id/helptext"
             android:layout_width="wrap_content"
@@ -220,7 +175,7 @@
             android:textStyle="bold"
             android:textColor="@color/black"
             android:fontFamily="@font/ubunturegular"
-            android:layout_marginTop="@dimen/_287sdp"
+            android:layout_marginTop="@dimen/_237sdp"
             android:layout_marginStart="@dimen/_70sdp"
             />
 
@@ -228,7 +183,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_70sdp"
-            android:layout_marginTop="@dimen/_305sdp"
+            android:layout_marginTop="@dimen/_255sdp"
             android:fontFamily="@font/ubunturegular"
             android:text="@string/help_settings_description"
             android:textColor="@color/darkgrey"

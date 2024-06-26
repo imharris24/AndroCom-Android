@@ -17,7 +17,7 @@ import android.util.Log;
 public class AudioCall {
 
     private static final String LOG_TAG = "AudioCall";
-    private static final int SAMPLE_RATE = 8000; // Hertz
+    private static final int SAMPLE_RATE = 16000; // Hertz
     private static final int SAMPLE_INTERVAL = 20; // Milliseconds
     private static final int SAMPLE_SIZE = 2; // Bytes
     private static final int BUF_SIZE = SAMPLE_INTERVAL * SAMPLE_INTERVAL * SAMPLE_SIZE * 2; //Bytes
@@ -27,31 +27,41 @@ public class AudioCall {
     private boolean speakers = false; // Enable speakers?
 
     public AudioCall(InetAddress address) {
-
         this.address = address;
     }
 
     public void startCall() {
-
         startMic();
         startSpeakers();
     }
 
     public void endCall() {
-
         Log.i(LOG_TAG, "Ending call!");
         muteMic();
         muteSpeakers();
     }
 
     public void muteMic() {
-
         mic = false;
     }
 
-    public void muteSpeakers() {
+    public boolean micCheck(){
+        if(mic) return true;
+        return false;
+    }
+    public void toggleMic(){
+        mic = !mic;
+        if(mic){
+            startMic();
+        }
+    }
 
+    public void muteSpeakers() {
         speakers = false;
+    }
+
+    public void toggleSpeaker(){
+        speakers = !speakers;
     }
 
     public void startMic() {
@@ -73,6 +83,7 @@ public class AudioCall {
                     // Create a socket and start recording
                     Log.i(LOG_TAG, "Packet destination: " + address.toString());
                     DatagramSocket socket = new DatagramSocket();
+                    socket.setReuseAddress(true);
                     audioRecorder.startRecording();
                     while(mic) {
                         // Capture audio from the mic and transmit it
@@ -92,7 +103,6 @@ public class AudioCall {
                     return;
                 }
                 catch(InterruptedException e) {
-
                     Log.e(LOG_TAG, "InterruptedException: " + e.toString());
                     mic = false;
                 }

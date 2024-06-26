@@ -50,12 +50,11 @@ class SplashScreenActivity : AppCompatActivity() {
 
 
         if (userProfileExists()) {
-//           Send TCP PACKET TP SERVER TO SEND IF WE ARE CONNECTED AD_HOC NETWORK
-//            sendTcpPacket(
-//                "192.168.1.1",
-//                SocketPorts.NETWORK_CHECK_PORT,
-//                "${user?.firstName} ${user?.lastName}: ${LocalIpAddressProvider().getLocalIpAddress()}"
-//            )
+       //   Send TCP PACKET TP SERVER TO SEND IF WE ARE CONNECTED AD_HOC NETWORK
+            sendTcpPacket(
+               "192.168.1.1",
+                SocketPorts.NETWORK_CHECK_PORT,
+               "${user?.firstName} ${user?.lastName}: ${LocalIpAddressProvider().getLocalIpAddress()}" )
         }
 
 
@@ -192,12 +191,18 @@ class SplashScreenActivity : AppCompatActivity() {
     private fun hasRecordAudio() =
         ActivityCompat.checkSelfPermission(this,
             Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED
+    private fun hasCamera() =
+        ActivityCompat.checkSelfPermission(this,
+            Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
 
     private fun requestPermission(){
         Log.d("PermissionRequest","Request for Permission")
         var permissionToRequest = mutableListOf<String>()
         if(!hasForegroundPermission()){
             permissionToRequest.add(Manifest.permission.POST_NOTIFICATIONS)
+        }
+        if(!hasCamera()){
+            permissionToRequest.add(Manifest.permission.CAMERA)
         }
         if(!hasRecordAudio()){
             permissionToRequest.add(Manifest.permission.RECORD_AUDIO)

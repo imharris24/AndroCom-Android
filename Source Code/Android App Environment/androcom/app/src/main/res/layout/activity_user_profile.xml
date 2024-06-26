@@ -29,45 +29,9 @@
         android:textSize="@dimen/_26sdp"
         android:textStyle="bold"
         android:layout_marginTop="@dimen/_35sdp"
-        app:layout_constraintTop_toBottomOf="@+id/backicon"
+        app:layout_constraintTop_toBottomOf="@id/backicon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/icon_container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/username"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="104dp">
-
-        <ImageView
-            android:id="@+id/messaging"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:src="@drawable/chat_icon"
-            app:tint="@color/grey" />
-
-        <ImageView
-            android:id="@+id/videocall"
-            android:layout_width="@dimen/_32sdp"
-            android:layout_height="@dimen/_32sdp"
-            android:layout_marginStart="@dimen/_25sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:layout_marginEnd="@dimen/_25sdp"
-            android:src="@drawable/video"
-            app:tint="@color/grey" />
-
-        <ImageView
-            android:id="@+id/voicecall"
-            android:layout_width="@dimen/_34sdp"
-            android:layout_height="@dimen/_34sdp"
-            android:layout_marginTop="@dimen/_3sdp"
-            android:src="@drawable/call_icon"
-            app:tint="@color/grey" />
-    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/usersetting"
@@ -76,14 +40,14 @@
         android:background="@drawable/chat_content"
         android:layout_marginTop="@dimen/_225sdp"
         app:layout_constraintTop_toBottomOf="@id/username">
+
         <View
             android:id="@+id/line_view"
             android:layout_width="@dimen/_35sdp"
             android:layout_height="7dp"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/rectangle"
-            />
+            android:background="@drawable/rectangle" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -94,8 +58,8 @@
             android:layout_marginLeft="@dimen/_24sdp"
             android:layout_marginTop="@dimen/_35sdp"
             android:textSize="@dimen/_14ssp"
-            android:fontFamily="@font/ubunturegular"
-            />
+            android:fontFamily="@font/ubunturegular" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,8 +68,8 @@
             android:layout_marginLeft="@dimen/_26sdp"
             android:layout_marginTop="@dimen/_58sdp"
             android:textSize="@dimen/_14ssp"
-            android:fontFamily="@font/ubunturegular"
-            />
+            android:fontFamily="@font/ubunturegular" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -115,8 +79,8 @@
             android:layout_marginLeft="@dimen/_24sdp"
             android:layout_marginTop="@dimen/_85sdp"
             android:textSize="@dimen/_14ssp"
-            android:fontFamily="@font/ubunturegular"
-            />
+            android:fontFamily="@font/ubunturegular" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -126,8 +90,8 @@
             android:layout_marginLeft="@dimen/_26sdp"
             android:layout_marginTop="@dimen/_110sdp"
             android:textSize="@dimen/_14ssp"
-            android:fontFamily="@font/ubunturegular"
-            />
+            android:fontFamily="@font/ubunturegular" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -137,8 +101,8 @@
             android:layout_marginLeft="@dimen/_24sdp"
             android:layout_marginTop="@dimen/_150sdp"
             android:textSize="@dimen/_14ssp"
-            android:fontFamily="@font/ubunturegular"
-            />
+            android:fontFamily="@font/ubunturegular" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -147,31 +111,30 @@
             android:layout_marginLeft="@dimen/_24sdp"
             android:layout_marginTop="@dimen/_175sdp"
             android:textSize="@dimen/_14ssp"
-            android:fontFamily="@font/ubunturegular"
-            />
+            android:fontFamily="@font/ubunturegular" />
+
         <FrameLayout
             android:layout_width="@dimen/_250sdp"
             android:layout_height="@dimen/_5sdp"
             android:id="@+id/macinput"
             android:background="@drawable/input_line"
             android:layout_marginLeft="@dimen/_22sdp"
-            android:layout_marginTop="@dimen/_195sdp"
+            android:layout_marginTop="@dimen/_195sdp" />
 
-            />
         <LinearLayout
             android:id="@+id/mutemessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|left"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal" >
+
             <ImageView
                 android:layout_width="@dimen/_25sdp"
                 android:layout_height="@dimen/_25sdp"
                 android:background="@drawable/mute"
                 android:layout_marginLeft="@dimen/_22sdp"
-                android:layout_marginTop="@dimen/_125sdp"
-                />
+                android:layout_marginTop="@dimen/_125sdp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -180,8 +143,7 @@
                 android:textSize="@dimen/_15ssp"
                 android:text="@string/contact_notification_title"
                 android:layout_marginLeft="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_120sdp"
-                />
+                android:layout_marginTop="@dimen/_120sdp" />
 
             <Switch
                 android:layout_width="@dimen/_45sdp"
@@ -191,13 +153,14 @@
                 android:id="@+id/mutenotification"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/blockmessages"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|left"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal" >
+
             <ImageView
                 android:layout_width="@dimen/_25sdp"
                 android:layout_height="@dimen/_25sdp"
@@ -205,8 +168,8 @@
                 app:tint="@color/red"
                 android:id="@+id/blockIcon"
                 android:layout_marginLeft="@dimen/_22sdp"
-                android:layout_marginTop="@dimen/_231sdp"
-                />
+                android:layout_marginTop="@dimen/_231sdp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:id="@+id/blockIconText"
@@ -216,9 +179,8 @@
                 android:textSize="@dimen/_15ssp"
                 android:text="@string/contact_block_title"
                 android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_235sdp" />
 
-                android:layout_marginTop="@dimen/_235sdp"
-                />
             <TextView
                 android:id="@+id/blockuser"
                 android:layout_width="wrap_content"
@@ -227,10 +189,7 @@
                 android:textColor="@color/red"
                 android:textSize="@dimen/_15ssp"
                 android:layout_marginLeft="@dimen/_9sdp"
-                android:layout_marginTop="@dimen/_235sdp"
-                />
-
+                android:layout_marginTop="@dimen/_235sdp" />
         </LinearLayout>
     </FrameLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

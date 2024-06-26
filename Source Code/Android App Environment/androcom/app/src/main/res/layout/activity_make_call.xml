@@ -23,23 +23,26 @@
       <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_420sdp"
+        android:layout_marginTop="@dimen/_370sdp"
         android:gravity="center_horizontal" >
 
           <ImageButton
               android:id="@+id/buttonMute"
-              android:layout_width="@dimen/_55sdp"
+              android:layout_width="@dimen/_58sdp"
               android:layout_height="@dimen/_55sdp"
-              android:layout_marginHorizontal="@dimen/_55sdp"
-              android:background="@drawable/mikemute"
-              android:src="@drawable/mike"
+              android:layout_marginHorizontal="@dimen/_58sdp"
+              android:background="@drawable/imagebutton"
+              android:src="@drawable/unmute"
               tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+
+
 
           <ImageButton
               android:id="@+id/buttonReject"
-              android:layout_width="@dimen/_55sdp"
+              android:layout_width="@dimen/_58sdp"
               android:layout_height="@dimen/_55sdp"
-              android:layout_marginHorizontal="@dimen/_55sdp"
+              android:layout_marginHorizontal="@dimen/_58sdp"
               android:background="@drawable/reject_button"
               android:src="@drawable/endcall"
              

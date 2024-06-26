@@ -53,10 +53,17 @@ class activity_chat : AppCompatActivity() {
         // set layout to activity_chat
         setContentView(R.layout.activity_chat)
 
-        startCallListener()
-//
+        // issue here
+        if (!ChatDatabaseHelper(this).isIPBlocked(intent.getStringExtra("ip").toString())) {
+            Log.d("not blocked"," startCallListener()")
+            startCallListener()
+        }else{
+            Log.d("blocked"," startCallListener()")
+        }
+
 
         val textname = findViewById<TextView>(R.id.textname)
+        val videoButton = findViewById<AppCompatImageView>(R.id.video)
         val backicon = findViewById<AppCompatImageView>(R.id.backicon)
         recyclerView = findViewById(R.id.chatRecyler)
         progressBar = findViewById(R.id.progress)
@@ -71,20 +78,29 @@ class activity_chat : AppCompatActivity() {
         val receivedName = "${intent.getStringExtra("username")}"
         Log.i("Test", "Name: ${receivedName}\n IP: ${receivedIP}\n MAC: $receivedMac");
 
+        videoButton.setOnClickListener {
+            val intent = Intent(this, ActivityVideoCall::class.java)
+            intent.putExtra("name", receivedName)
+            intent.putExtra("ip", receivedIP)
+            startActivity(intent)
+        }
+
         // audio call functionality
         val callButton = findViewById<AppCompatImageView>(R.id.imageaudio)
         callButton.setOnClickListener{
-            // Collect details about the selected contact
-            val contact = receivedName
-            val ip = receivedIP
-            IN_CALL = true
+            if (!ChatDatabaseHelper(this).isIPBlocked(intent.getStringExtra("ip").toString())) {
+                // Collect details about the selected contact
+                val contact = receivedName
+                val ip = receivedIP
+                IN_CALL = true
 
-            // Send this information to the MakeCallActivity and start that activity
-            val intent = Intent(this, MakeCallActivity::class.java)
-            intent.putExtra("EXTRA_CONTACT", contact)
-            intent.putExtra("EXTRA_IP", ip);
-            intent.putExtra("EXTRA_DISPLAYNAME", contact);
-            startActivity(intent);
+                // Send this information to the MakeCallActivity and start that activity
+                val intent = Intent(this, MakeCallActivity::class.java)
+                intent.putExtra("EXTRA_CONTACT", contact)
+                intent.putExtra("EXTRA_IP", ip);
+                intent.putExtra("EXTRA_DISPLAYNAME", contact);
+                startActivity(intent);
+            }
         }
 
 
@@ -94,11 +110,12 @@ class activity_chat : AppCompatActivity() {
         // event listener for contact profile
         textname.setOnClickListener {
             val intent = Intent(this, activity_UserProfile::class.java)
-            startActivity(intent)
+
             intent.putExtra("username", receivedName)
             intent.putExtra("ip", receivedIP)
             intent.putExtra("mac", receivedMac)
-            finish()
+            startActivity(intent)
+
         }
 
         // event listener for send button
@@ -109,7 +126,10 @@ class activity_chat : AppCompatActivity() {
                 // send message
                 if (receivedIP != null) {
                     Log.i("Bug", "Message is Sent: ${message}")
-                    Send_Message(Name=receivedName,IP_Address=receivedIP,Mac=receivedMac,Message= message)
+                    if (!ChatDatabaseHelper(this).isIPBlocked(receivedIP)){
+                            Send_Message(Name=receivedName,IP_Address=receivedIP,Mac=receivedMac,Message= message)
+                    }
+
                 }
                 // reset input to null
                 inputMessage.setText("")
@@ -176,9 +196,9 @@ class activity_chat : AppCompatActivity() {
 
         // Log information about loaded messages
         if (messages.isNotEmpty()) {
-            Log.d("MessageLoading", "${messages.size} messages loaded for IP: $ip")
+//            Log.d("MessageLoading", "${messages.size} messages loaded for IP: $ip")
         } else {
-            Log.d("MessageLoading", "No messages loaded for IP: $ip ")
+//            Log.d("MessageLoading", "No messages loaded for IP: $ip ")
         }
 
         return messages
@@ -249,9 +269,11 @@ class activity_chat : AppCompatActivity() {
         }
     }
 
-
+    // issue here
     // call functions
     fun startCallListener() {
+        if (!ChatDatabaseHelper(this).isIPBlocked(intent.getStringExtra("ip").toString())) {
+        val receivedName = "${intent.getStringExtra("username")}"
         // Creates the listener thread
         LISTEN = true
         val listener = Thread {
@@ -265,10 +287,10 @@ class activity_chat : AppCompatActivity() {
                 while (LISTEN) {
                     // Listen for incoming call requests
                     try {
-//                        Log.i(
-//                            LOG_TAG,
-//                            "Listening for incoming calls"
-//                        )
+                        Log.i(
+                            LOG_TAG,
+                            "Listening for incoming calls"
+                        )
                         socket.receive(packet)
                         val data = String(buffer, 0, packet.length)
                         Log.i(
@@ -285,6 +307,7 @@ class activity_chat : AppCompatActivity() {
                                 ReceiveCallActivity::class.java
                             )
                             intent.putExtra("EXTRA_CONTACT", name)
+                            intent.putExtra("DisplayName", receivedName)
                             intent.putExtra("EXTRA_IP", address.substring(1, address.length))
                             IN_CALL = true
                             //LISTEN = false;
@@ -308,6 +331,7 @@ class activity_chat : AppCompatActivity() {
             }
         }
         listener.start()
+        }
     }
 
     private fun stopCallListener() {

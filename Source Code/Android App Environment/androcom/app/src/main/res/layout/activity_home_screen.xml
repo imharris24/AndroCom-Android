@@ -12,30 +12,17 @@
         android:id="@+id/chats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:fontFamily="@font/ubunturegular"
         android:padding="@dimen/_2sdp"
         android:text="@string/home_screen_title"
         android:textColor="@color/white"
         android:textSize="@dimen/_20sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.372"
-        app:layout_constraintStart_toEndOf="@+id/searchimage"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/searchimage"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-
-        android:background="@drawable/rounded_imageview"
-        android:padding="@dimen/_3sdp"
-        android:src="@drawable/ic_search"
+        android:layout_marginTop="36dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/white" />
+        app:layout_constraintBottom_toTopOf="@id/frameLayout"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
     <ImageView
         android:id="@+id/userlist"

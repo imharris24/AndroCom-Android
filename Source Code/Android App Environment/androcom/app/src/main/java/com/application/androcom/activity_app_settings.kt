@@ -25,15 +25,14 @@ class activity_app_settings : AppCompatActivity() {
         val dispip = findViewById<TextView>(R.id.dispip)
         val chatIcon = findViewById<ImageView>(R.id.chatIcon)
         val chatText = findViewById<TextView>(R.id.chatText)
-        val keysIcon = findViewById<ImageView>(R.id.keys)
         val accountText = findViewById<TextView>(R.id.account)
         val messageIcon = findViewById<ImageView>(R.id.messageicon)
         val blockuser = findViewById<TextView>(R.id.blockedUsers)
         val blockedipdescription=findViewById<TextView>(R.id.blocked_description)
-        val notificationIcon = findViewById<ImageView>(R.id.notification)
-        val notificationText = findViewById<TextView>(R.id.texts)
         val helpIcon = findViewById<ImageView>(R.id.help)
         val helpText = findViewById<TextView>(R.id.helptext)
+        val Editaccount=findViewById<TextView>(R.id.editAccountInfo)
+        val accounticon=findViewById<ImageView>(R.id.keys)
 
         // load user information from SharedPreferences
         val sharedPreferences: SharedPreferences = getSharedPreferences(PREFS_FILENAME, Context.MODE_PRIVATE)
@@ -44,6 +43,23 @@ class activity_app_settings : AppCompatActivity() {
         if (userData != null) {
             user = gson.fromJson(userData, activity_setting_up.User::class.java)
             dispname.text = "${user.firstName} ${user.lastName}"
+        }
+
+
+        accountText.setOnClickListener {
+            val intent = Intent(this, Activity_Edit_Name::class.java)
+            startActivity(intent)
+            finish()
+        }
+        Editaccount.setOnClickListener {
+            val intent = Intent(this, Activity_Edit_Name::class.java)
+            startActivity(intent)
+            finish()
+        }
+        accounticon.setOnClickListener {
+            val intent = Intent(this, Activity_Edit_Name::class.java)
+            startActivity(intent)
+            finish()
         }
 
         // display local ip address
@@ -63,9 +79,7 @@ class activity_app_settings : AppCompatActivity() {
         }
 
         // event listener for account settings
-        keysIcon.setOnClickListener {
-            //navigateToMainActivity()
-        }
+
         accountText.setOnClickListener {
             //navigateToMainActivity()
         }
@@ -85,13 +99,6 @@ class activity_app_settings : AppCompatActivity() {
             val intent = Intent(this, BlockedIPS::class.java)
             startActivity(intent)
             finish()
-        }
-        // event listener for notifications
-        notificationIcon.setOnClickListener {
-            //navigateToMainActivity()
-        }
-        notificationText.setOnClickListener {
-            //navigateToMainActivity()
         }
 
         // event listener for help

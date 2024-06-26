@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".Activity_Edit_Name">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/backButton"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_imageview"
+        android:padding="@dimen/_2sdp"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white"
+
+        />
+
+    <TextView
+        android:id="@+id/Editusername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubunturegular"
+        android:text="@string/edit_name"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backButton"
+        app:layout_constraintVertical_bias="0.629" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_74sdp"
+        android:background="@drawable/chat_content"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-29dp">
+
+
+        <EditText
+            android:id="@+id/first_name_input"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_110sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:contentDescription="@string/setting_up_input_placeholder_1"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text1"
+            tools:ignore="EditableContentDescCheck" />
+
+        <TextView
+            android:id="@+id/firstname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubunturegular"
+            android:layout_marginTop="@dimen/_80sdp"
+            android:text="@string/setting_up_input_label_1"
+            android:textColor="@color/primary_blue"
+            android:textSize="18sp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@+id/first_name_input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/first_name_input" />
+
+        <EditText
+
+            android:id="@+id/last_name_input"
+            android:layout_width="340dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/_200sdp"
+            android:contentDescription="@string/setting_up_input_placeholder_2"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:paddingTop="12dp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:paddingBottom="12dp"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/first_name_input"
+            tools:ignore="EditableContentDescCheck" />
+
+        <TextView
+            android:id="@+id/lastname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_170sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:fontFamily="@font/ubunturegular"
+            android:text="@string/setting_up_input_label_2"
+            android:textColor="@color/primary_blue"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/last_name_input"
+            app:layout_constraintTop_toBottomOf="@+id/first" />
+        <android.widget.Button
+            android:id="@+id/SaveChanges"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_300sdp"
+            android:layout_marginLeft="@dimen/_50sdp"
+            android:background="@drawable/button_style"
+            android:text="@string/save_changes"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_17ssp"
+            android:fontFamily="@font/ubunturegular"
+            android:backgroundTint="@color/primary_blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/last_name_input" />
+
+
+
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
