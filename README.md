@@ -126,9 +126,9 @@ Here are some screenshots demonstrating the functionality of AndroCom:
 
 <div align="center">
     <img src="https://github.com/imharris24/AndroCom-Android/blob/main/Screenshot/1.png" width="200">
-    <img src="https://github.com/imharris24/AndroCom-Android/blob/main/Screenshot/1.png" width="200">
-    <img src="https://github.com/imharris24/AndroCom-Android/blob/main/Screenshot/1.png" width="200">
-    <img src="https://github.com/imharris24/AndroCom-Android/blob/main/Screenshot/1.png" width="200">
+    <img src="https://github.com/imharris24/AndroCom-Android/blob/main/Screenshot/2.png" width="200">
+    <img src="https://github.com/imharris24/AndroCom-Android/blob/main/Screenshot/3.png" width="200">
+    <img src="https://github.com/imharris24/AndroCom-Android/blob/main/Screenshot/4.png" width="200">
 </div>
 
 1. **Splash Screen**: The starting screen of the application.
