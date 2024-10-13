@@ -122,17 +122,14 @@ The architecture of AndroCom revolves around the creation of an ad hoc network u
 
 ## Screenshots
 
-Here are some screenshots demonstrating the functionality of AndroCom:
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/imharris24/AndroCom/main/Screenshots/splash_screen.png" width="250">
-    <img src="https://raw.githubusercontent.com/imharris24/AndroCom/main/Screenshots/chat_screen.png" width="250">
-    <img src="https://raw.githubusercontent.com/imharris24/AndroCom/main/Screenshots/video_call_screen.png" width="250">
+    <img src="https://github.com/imharris24/AndroCom-Android/blob/main/Screenshot/1.png" width="200">
+    <img src="https://github.com/imharris24/AndroCom-Android/blob/main/Screenshot/2.png" width="200">
+    <img src="https://github.com/imharris24/AndroCom-Android/blob/main/Screenshot/3.png" width="200">
+    <img src="https://github.com/imharris24/AndroCom-Android/blob/main/Screenshot/4.png" width="200">
 </div>
 
-1. **Splash Screen**: The starting screen of the application.
-2. **Chat Screen**: A look at the encrypted text messaging interface.
-3. **Video Call Screen**: Initiating a secure video call within the network.
 
 ## Future Work
 
